@@ -16,11 +16,8 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+    when /^the edit page for "([^"]+)"$/
+      edit_movie_path(Movie.find_by_title($1).id)
 
     else
       begin
