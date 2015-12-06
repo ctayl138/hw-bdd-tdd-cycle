@@ -1,5 +1,5 @@
 Rottenpotatoes::Application.routes.draw do
   resources :movies
-  # map '/' to be a redirect to '/movies'
+  get ':director', to: 'directors#show', as: :similar_director
   root :to => redirect('/movies')
 end
