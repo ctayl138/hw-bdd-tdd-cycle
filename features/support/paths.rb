@@ -22,7 +22,8 @@ module NavigationHelpers
     when /^the Similar Movies page for "([^"]+)"$/
       @movie_id = Movie.find_by_title($1).id
       movie_similar_director_path(@movie_id)
-    
+    when /^the RottenPotatoes home page$/
+      movies_path
     else
       begin
         page_name =~ /^the (.*) page$/
